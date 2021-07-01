@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+ 
+        #norh .norh{
+            flex-direction: column;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        #cont .contact-header{
+            margin-top: -117px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 22px;
+            align-items: center;
+            justify-content: center;
+        }
+        #norh #errors{
+            width: 48%;
+            font-size: 15px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 8%;
+            padding: 0px;
+            background-color: #ff6a8d;
+        }
+
+        #norh form{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        #norh .control-info{
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            padding: 10px;
+            flex-direction: column;
+        }
+
+        #norh .control-info input{
+            background-color: transparent;
+            border-radius: 3%;
+            border: 1px solid #00201c;    
+        }
+
+        #norh .control-info input{
+            width: 100%;
+            padding: 15px;
+            margin: 13px 7px;
+        }
+        ::-webkit-input-placeholder{
+            color: #00201c;
+        }
+        :-ms-input-placeholder{
+            color: #00201c;
+        }
+        ::-moz-placeholder{
+            color: #00201c;
+        }
+        :-ms-placeholder{
+            color: #00201c;
+        }
+        #norh  .control-submit{
+            margin-top: -12px;
+            padding: 16px;
+            margin-left: 17px;
+            width: 32%;
+            background-image: linear-gradient(60deg, #000000 0%, #00201c 100%);
+            border: none;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            
+        }
+
+    </style>
+    <script>
+        function NOR_validation(){
+            var NOR_firstname = document.getElementById("firstname").value;
+            var NOR_lastname = document.getElementById("lastname").value;
+            var NOR_age = document.getElementById("age").value;
+            var errors = document.getElementById("errors");
+            var text;
+
+            errors.style.padding = "15px";
+
+            if(NOR_firstname.length <4){
+                text = "Plase Enter Valid first Name";
+                errors.innerHTML = text;
+                return false;
+            }
+            if(NOR_lastname.length <4){
+                text = "Plase Enter Valid last Name";
+                errors.innerHTML = text;
+                return false;
+            }
+            errors.style.backgroundColor = "lightblue";
+            errors.style.fontSize = "27px";
+            errors.innerHTML = "Your Age is: " + NOR_age;
+            return NOR_age;
+
+        }
+    </script>
+</head>
+<body>
+    <section id="norh">
+        <div class="norh">
+                <div id="errors"></div>
+                <form action="" id="myform">
+                    <div class="control-info">
+                        <input type="text" placeholder="First Name" id="firstname">
+                        <input type="text" placeholder="last Name" id="lastname">
+                        <input type="text" placeholder="Number Your age" id="age">
+                        
+                    </div>
+                </form>
+                <button class="control-submit" onclick="return NOR_validation()">SEND </button>
+        </div>
+    </section>
+</body>
+</html>
+    
